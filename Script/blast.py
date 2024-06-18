@@ -49,7 +49,7 @@ def needleman_wunsch(list1, list2, domain_scores):
         dp_matrix[i][0] = i * gap
     for j in range(len_list2 + 1):
         dp_matrix[0][j] = j * gap
-
+    match=0
     for i in range(1, len_list1 + 1):
         for j in range(1, len_list2 + 1):
             match_str1=f"{list1[i - 1]}={list2[j - 1]}"
@@ -87,7 +87,17 @@ def needleman_wunsch(list1, list2, domain_scores):
             i -= 1
             j -= 1
     if len(alignment_list1)!= 0 :
+        count=0
+        for i in range(len(alignment_list1)):
+            if alignment_list1[i] != "-" and alignment_list2[i] != "-":
+                count += 1
         score = Decimal(score)/Decimal(len(alignment_list1))
+        # print("match"+ str(non_gap_count))
+        # print("list1"+ str(len(alignment_list1)))
+        # print("list2"+ str(len(alignment_list2)))
+        # print("match"+ str(count))
+        score = score * ((Decimal(count)/Decimal(len(alignment_list1)))**2)
+        # Jaccard相似性
     else:
         score = "NULL"
     return alignment_list1, alignment_list2, score
