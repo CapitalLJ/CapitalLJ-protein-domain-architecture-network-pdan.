@@ -1,0 +1,36 @@
+; 从scan的结果文件出发，第一步是担忧所有物种的scan文件作为输入文件
+
+; scan_domainA.py 将结果保存在一个文件夹里，185个不同的文件
+
+; domain_to_count.py  输入文件是这185个物种文件，输出文件夹的count子文件夹有前三个层次的计数文件，
+; list文件有domain等的列表。
+
+; DA_blast.sh  输入文件是DA_list.txt
+; 根据domain_content的列表文件和ddr的domain之间的打分文件，输出的是DA的打分文件
+
+; 中间split生成的文件输出文件手动合并，（手动合并删除），DA_score.tsv,并作为下一步的输入。
+
+; mcl_to_pidan.sh，输入文件是上一步合并的DA_score.tsv以及之前的DA_blast.sh的输入文件DA_list.txt。
+; 输出文件在mcl的文件夹里，包括mcl的结果和pidan的list文件，复制到上一步的list里
+
+; pidan_cout.py ，用于统计pidan的计数。输出文件在count的pidan文件夹里。
+
+; distance_EU.py ，distance_EU_boot.py 将count文件转化为EU文件，这里还要做cos相似性。
+
+
+;将distance转化为phylip输入文件，先手动进行   tsvTophylip.py 完成
+
+
+; phylip.sh   phylip进行NJ法和NJ——boot树，然后进行自举计算，树名称替换。
+
+
+
+
+
+
+
+
+
+
+
+

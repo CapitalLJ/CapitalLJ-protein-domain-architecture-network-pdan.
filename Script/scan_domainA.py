@@ -56,7 +56,7 @@ def scan_to_domainA(input_file,output_file):
         if not line.startswith('#'):
             domain_list=[]
             parts = line.strip().split()
-            if float(parts[6]) < 1e-5 and float(parts[11]) < 1e-5 and float(parts[12]) < 1e-5:
+            if float(parts[6]) < 1e-20 and float(parts[11]) < 1e-20 and float(parts[12]) < 1e-20:
                 protein_key = parts[3]
                 domain_name = parts[0]
                 domain_list = [parts[17],parts[18],parts[12],parts[0]]
