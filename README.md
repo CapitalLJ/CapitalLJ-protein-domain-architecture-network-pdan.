@@ -22,34 +22,6 @@ gtdbtk -h
 ```
 
 
-如果想在其他工作站使用，可直接下载压缩包解压缩。[gtdbtk-2.1.1.tar.gz](http://114.212.160.236:5000/)
-
-```shell
-tar -xzf  gtdbtk-2.1.1.tar.gz
-cd gtdbtk-2.1.1/bin
-pwd
-# 目前的绝对路径
-# 修改gtdbtk第一行的绝对路径
-
-
-export GTDBTK_DATA_PATH="<your_path>/gtdbtk-2.1.1/share/gtdbtk-2.1.1/db"
-export LD_LIBRARY_PATH="<your_path>/gtdbtk-2.1.1/lib:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="<your_path>/gtdbtk-2.1.1/lib:$LD_LIBRARY_PATH"
-
-# 将上面三行加入~/.bashrc
-
-gtdbtk -h 
-
-```
-
-
-
-
-
-
-
-
-
 
 
 
